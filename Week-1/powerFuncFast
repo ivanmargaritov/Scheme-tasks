@@ -1,0 +1,5 @@
+(define (qexpt n k)
+        (if (= k 0) 1
+            (if (even? k)
+                (qexpt (* n n) (quotient k 2))
+                (* n (qexpt n (- k 1))))))
