@@ -1,0 +1,5 @@
+(define (fact-iter n d) 
+        (if (= n 0) 1
+            (if (= n 1) d
+                (fact-iter (- n 1) (* d n)))))
+(define (fact n) (fact-iter n 1))
