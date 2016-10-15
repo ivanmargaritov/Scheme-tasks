@@ -1,0 +1,4 @@
+(define (fib-iter n a b)
+        (if (= n 0) (+ a b)
+            (fib-iter (- n 1) b (+ a b))))
+(define (fibo n) (fib-iter n 0 1))
