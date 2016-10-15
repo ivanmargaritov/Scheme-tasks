@@ -1,0 +1,4 @@
+(define (num_even n) (if (= n 0) 0
+         (if (= (remainder (remainder n 10) 2) 0)
+               (+ 1 (num_even (quotient n 10)))
+               (+ 0 (num_even (quotient n 10))))))  
