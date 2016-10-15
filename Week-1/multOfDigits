@@ -1,0 +1,3 @@
+(define (product-digits num)
+        if (<= num 0) 1 
+           (* (remainder num 10) (product-digits (quotient num 10)))))
