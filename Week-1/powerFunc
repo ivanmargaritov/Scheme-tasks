@@ -1,0 +1,3 @@
+(define (expt n k)
+        (if (= k 0) 1
+            (* n (expt n (- k 1)))))
