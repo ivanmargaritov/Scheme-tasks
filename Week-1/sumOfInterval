@@ -1,0 +1,3 @@
+(define (interval-sum start end) 
+      (if ( > start end) 0
+          (+ start (interval-sum (+ start 1) end))))
