@@ -1,0 +1,4 @@
+(define (num_odd n) (if (= n 0) 0
+        (if (= (remainder (remainder n 10) 2 ) 0)
+                (+ 0 (num_odd (quotient n 10))) 
+                (+ 1 (num_odd (quotient n 10))))))
