@@ -1,0 +1,6 @@
+(define (reverse num digit rev)
+      (if (= num 0) (+ digit (* rev 10))
+            (reverse (quotient num 10) (remainder num 10) (+ digit (* rev 10)))))
+(define (is-palindrome? number) 
+      (if (= number (reverse number 0 0)) #t
+              #f))
