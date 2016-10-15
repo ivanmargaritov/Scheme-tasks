@@ -1,0 +1,5 @@
+(define (prime n d)
+    (if (< n 2) #t
+        ( if (= d 1) #t
+             (if (= (remainder n d) 0) #f
+                 (prime n (- d 1))))))
