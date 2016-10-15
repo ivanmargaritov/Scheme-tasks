@@ -1,0 +1,3 @@
+(define (digits-in num) 
+      (if (< num 10) 1
+          (+ 1 (digits-in (quotient num 10)))))
