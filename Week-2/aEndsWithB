@@ -1,0 +1,9 @@
+(define (digits-in num) 
+      (if (< num 10) 1
+          (+ 1 (digits-in (quotient num 10)))))
+(define (expt n k)
+      (if (= k 0) 1
+          (* n (expt n (- k 1)))))
+(define (ends-with a b) (if (> a b) 
+	  	(if (= (remainder a (expt 10 (digits-in b))) b) #t #f)
+	  	(if (= a (remainder b (expt 10 (digits-in a)))) #t #f)))
