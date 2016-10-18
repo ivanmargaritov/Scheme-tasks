@@ -7,3 +7,7 @@
 (define (ends-with a b) (if (> a b) 
 	  	(if (= (remainder a (expt 10 (digits-in b))) b) #t #f)
 	  	(if (= a (remainder b (expt 10 (digits-in a)))) #t #f)))
+-----------------------------------------------------------------------------------
+#/(define (ends-with? a b) 
+	(if (= a b) #t 
+	      (if (> a b) (ends-with? (remainder a 10) b) (ends-with? a (remainder b 10)))))/#
