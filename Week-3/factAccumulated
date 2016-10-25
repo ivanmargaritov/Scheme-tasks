@@ -1,0 +1,7 @@
+(define (accumulate term op null-value a next b)
+    (if (<= a b) 
+	null-value
+	(op (term a) (accumulate term op null-value (next a) next b))))
+(define (id x) x)
+(define (dec x) (- x 1))
+(define (fact-accum a b) (accumulate id * 1 a dec b))
