@@ -1,0 +1,7 @@
+(define (accumulate term op null-value a next b)
+    (if (> a b) 
+  	null-value
+	  (op (term a) (accumulate term op null-value (next a) next b))))
+(define (inc x) (+ x 1))
+(define (mult a) (* 2  a))
+(define (func-sum a b) (accumulate mult + 0 a inc b))
