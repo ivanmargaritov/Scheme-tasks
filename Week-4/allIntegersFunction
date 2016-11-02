@@ -1,0 +1,6 @@
+(define (allInts x)
+      (if (null? x)
+          #t
+	        (if (integer? (car x))
+	             (allInts (cdr x))
+		           #f)))
