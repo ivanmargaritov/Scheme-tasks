@@ -1,0 +1,6 @@
+(define (filterA pred listA)
+    (cond 
+	    ((null? listA) '())
+    	((pred (car listA))
+	       (cons (car listA) (filterA pred (cdr listA))))
+	    (else (filterA pred (cdr listA)))))
