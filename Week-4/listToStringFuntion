@@ -1,0 +1,7 @@
+(define (listToString listA)
+    (if (null? listA)
+	      "" 
+      	(string-append
+            (string-append 
+                (car listA) " ")
+                (listToString (cdr listA)))))
