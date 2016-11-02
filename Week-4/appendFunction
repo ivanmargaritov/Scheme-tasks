@@ -1,0 +1,4 @@
+(define (appendA l m)
+      (if (null? l)
+          m
+	        (cons (car l) (appendA (cdr l) m))))
