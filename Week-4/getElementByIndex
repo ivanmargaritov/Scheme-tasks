@@ -1,0 +1,4 @@
+(define (listA-ref listA place) 
+    (if (= place 0)
+      	(car listA)
+	      (listA-ref (cdr listA) (- place 1))))
