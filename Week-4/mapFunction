@@ -1,0 +1,4 @@
+(define (mapA func listA) 
+    (if (null? listA) 
+    	'()
+	    (cons (func (car listA)) (mapA func (cdr listA)))))
