@@ -1,0 +1,4 @@
+(define (reverse1 listA)
+    (if (null? listA)
+	      '()
+	      (append (reverse1 (cdr listA)) (list (car listA)))))
