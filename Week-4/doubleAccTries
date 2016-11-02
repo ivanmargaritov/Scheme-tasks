@@ -1,0 +1,18 @@
+(define (fact n) 
+      (if (or (= n 0) (= n 1)) 1
+          (* n (fact (- n 1)))))
+(define (expt n k)
+        (if (= k 0) 1
+            (* n (expt n (- k 1)))))
+(define (accumulate op a b next null-value term)
+    (if (> a b) 
+	       null-value
+	      (op (term a) (accumulate op a (next b) next null-value term))))
+(define (order x p k) 
+      (accumulate * 1 p 1 (lambda (x) (+ x 1))
+	         (lambda (k)  
+	            	(accumulate + 0 k 0 (lambda (x) (+ x 2))
+		               (lambda (x)
+		                  (* (expt (-1) k) 
+		                  	 (/ (expt x (* 2 k))
+			                      (fact (* 2 k)))))))
