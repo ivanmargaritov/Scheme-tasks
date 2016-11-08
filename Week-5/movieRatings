@@ -1,0 +1,39 @@
+(define (sum-movie-rating mov-list)
+    (if (null? mov-list)
+	0
+	(+ 
+	    (car (cdr (car mov-list)))
+	    (sum-movie-rating (cdr mov-list)))))
+(define (avg-movie-rating mov-list)
+    (if (null? mov-list)
+	0
+	(/
+	    (sum-movie-rating mov-list)
+	    (length mov-list))))
+;функция reduce, равносилна на fold-right	    
+(define (reduce op null-value listA)
+    (if (null? listA)
+	null-value
+	(op (car listA) (reduce op null-value (cdr listA)))))
+	
+(define (sum-movie-rating-map mov-list)
+    (map (lambda (movie)
+	    (car (cdr movie))) mov-list))
+	    
+(define (avg-movie-rating1 mov-list)
+    (/
+	(reduce + 0 (sum-movie-rating-map mov-list))
+	(length mov-list)))
+	
+(define (avg-movie-rating2 mov-list)
+    (/
+	(reduce + 0 (map cadr mov-list))
+	(length mov-list)))
+	
+;(define (bigger a b)
+ ;   (if (> a b)
+;	a))
+;(define (higherRating mov-list)
+ ;   (if (null? mov-list)
+  ;    '()
+   ;   (filter (bigger (cadar mov-list) (avg-movie-rating1 mov-list)) (cdr mov-list))))
