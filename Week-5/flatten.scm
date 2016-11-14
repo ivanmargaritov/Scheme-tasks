@@ -1,0 +1,5 @@
+(define (flatten listA)
+    (cond ((null? listA) '())
+	  ((list? (car listA)) 
+	      (append (flatten (car listA)) (flatten (cdr listA))))
+	  (else (append (list (car listA)) (flatten (cdr listA))))))
