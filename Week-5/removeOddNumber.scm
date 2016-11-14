@@ -1,0 +1,6 @@
+(define (removeOdd listA)
+    (let ((evenNumbers (filter even? listA))
+	 (oddNumbers (filter odd? listA)))
+    (cond ((null? listA) '())
+	  ((= (length evenNumbers) 1) (car evenNumbers))
+	  (else (car oddNumbers)))))
