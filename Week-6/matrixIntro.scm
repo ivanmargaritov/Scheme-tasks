@@ -1,5 +1,5 @@
 (define matrix '( (1 2 3) (4 5 6) (7 8 9)))
-(cadr matrix) ;âòîðè ðåä
+(cadr matrix) ;Ã¢ÅˆÃ®Ä‘Ä Ä‘ÄºÃ¤
 (define (list-ref listA n)
     (cond ((> n (- (length listA) 1)) (display "index out of range"))
 	  ((= n 0) (car listA))
