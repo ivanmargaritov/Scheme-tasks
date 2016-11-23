@@ -1,0 +1,20 @@
+(define listA '(5 3 8 6 4 2 5 7 1))
+
+(define (longest-descending-prefix listA)
+    (if (null? (cdr listA))
+	'()
+	(if (< (car listA) (car (cdr listA)))
+	    (cons (car listA) '())
+	    (cons (car listA) (longest-descending-prefix (cdr listA))))))
+
+(define (listOfPref listA)
+    (if (null? listA)
+	'()
+	(list (longest-descending-prefix listA) (listOfPref (cdr listA)))))
+
+(define (longestDescending listA)
+    (if (null? listA)
+	'()
+	(if (> (length (longest-descending-prefix listA)) (length (longest-descending-prefix (cdr listA))))
+	    (longest-descending-prefix listA)
+	    (longestDescending (cdr listA)))))
