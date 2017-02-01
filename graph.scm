@@ -49,3 +49,4 @@
          [all? (lambda (p xs) (fold-left (lambda (acc next) (and acc next)) #t (map p xs)))]
          [subset? (lambda (xs ys) (all? (lambda (x) (member x ys)) xs))])
     (subset? first-edges second-edges)))
+(define graph2 '((1 3 4 5 7 6) (2 1 5) (3 4 2 5) (4 4 1) (5 5)))
